@@ -1,0 +1,25 @@
+@import "../../../assets/sass/app-variables.scss";
+.contact-me-section{
+    .small{
+        font-size: 14px;
+        color: $primary-font-color;
+        margin-bottom: 10px;
+    }
+    h2.contact-mail {
+        color: $primary-font-color;
+        margin: 0;
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+    a.social-link {
+        border: 1px solid $primary-font-color;
+        display: inline;
+        border-radius: 60%;
+        box-shadow: 0px 0px 1px $secondary-font-color;
+        padding: 0.5em 0.6em;
+        margin: 2px;
+        color: $primary-font-color;
+    }
+}

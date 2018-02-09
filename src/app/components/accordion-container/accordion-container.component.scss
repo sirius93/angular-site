@@ -1,0 +1,122 @@
+.accordion-container{
+    margin: 5px auto;
+}
+@mixin ngxAccordion(
+    $accordion-border-color:#BBBDC0
+    ) {
+  
+    .flex-header{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .flex{
+        flex: 1;
+      }
+    }
+     
+    [class^="ngx-accordion"]{
+      // display: block;
+      ngx-accordion-container,
+      ngx-accordion-header,
+      ngx-accordion-body{
+        display: block;
+      }
+      // Variation One Styles
+    }
+    .ngx-accordion{
+      &-1{
+        .header{
+          .ngx-accordion-inner-header:hover{
+            cursor: pointer;
+          }
+          ngx-accordion-header{
+            border-bottom: 1px solid $accordion-border-color;
+            padding: 10px 10px;
+            &.first{
+              border-top: 1px solid $accordion-border-color;
+            }
+            .ngx-accordion-inner-header,
+            .ngx-accordion-inner-subheader{
+              padding-right: 20px;
+            }
+          }
+          .ngx-accordion-toggle-icon{
+            &:before{
+                content: "\f067";
+                display: inline-block;
+                font: normal normal normal 20px FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+            }
+          }
+          &.active{
+            ngx-accordion-header{
+              border-bottom: none;
+            }
+            .ngx-accordion-toggle-icon{
+              &:before{
+                content: "\f068";
+                display: inline-block;
+                font: normal normal normal 20px FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+              }
+            }
+          }
+        }
+        .body{
+          padding: 0 10px;
+          @media only screen and (min-width: $screen-md){
+            .ngx-accordion-body{
+              padding-left:15px;
+            }
+          }
+          &.active{
+            ngx-accordion-body{
+              border-bottom: 1px solid $accordion-border-color;
+            }
+          }
+          .ngx-accordion-body-content p,
+          .ngx-accordion-body-innercontent p{
+            font-size: 14px;
+          }
+        }
+      }
+      &-2{
+        .header{
+          display: inline-block;
+          ngx-accordion-header{
+            padding: 10px 5px;
+          }
+          a{
+            text-decoration: none;
+            font-weight: bold;
+          }
+          .ngx-accordion-toggle-icon{
+            &:before{
+              content: "+";
+              font-size: 15px;
+            }
+          }
+          &.active{
+            .ngx-accordion-toggle-icon{
+              &:before{
+                content: "-";
+                font-size: 15px;
+              }
+            }
+          }
+        }
+        .body{
+          padding: 0 10px;
+          .ngx-accordion-body-content p,
+          .ngx-accordion-body-innercontent p{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }

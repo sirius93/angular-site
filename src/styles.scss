@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/sass/app-variables.scss";
+@import "./assets/sass/bulma-variables.scss";
+@import "./assets/sass/bulma-custom.scss";
+@import '~font-awesome/scss/font-awesome';
+@import "./app/components/accordion-container/accordion-container.component.scss";
+
+$screen-md : 992px;
+@include ngxAccordion();
+body{
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: $primary-font-color;
+}
+.amp-dash{
+    pre{
+        background: none;
+    }
+}

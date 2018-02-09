@@ -1,0 +1,27 @@
+@import "./app-variables.scss";
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+// All overrides go here
+// http://bulma.io/documentation/overview/variables/
+
+$red: $app-red;
+$danger: $red;
+
+$link: $app-blue;
+
+$menu-item-color: $app-white;
+$menu-label-color: $app-white;
+$menu-item-radius: 0;
+
+$control-radius: 0;
+
+$family-sans-serif: Univers;
+
+
+$primary-green : #5CDB95;
+$secondary-green : #8EE4AF;
+$gray : #EDF5E1;
+$primary-font-color : #595959;
+$secondary-font-color : #05386B;
+$light-blue : #379683;

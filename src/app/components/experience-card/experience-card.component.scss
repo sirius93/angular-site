@@ -1,0 +1,33 @@
+@import "../../../assets/sass/app-variables.scss";
+.box{
+    background: transparent;
+    border: 1px solid #00d1b2;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    .header{
+        font-size: 22px;
+        font-weight: 700;
+        color: white;
+        a{
+            color: $primary-font-color;
+            font-size: 15px;
+            margin-left: 5px;       
+        }
+    }
+    .small{
+        font-size: 14px;
+        font-weight: 400;
+        color: $gray;
+    }
+    .role{
+        font-size: 18px;
+        font-weight: 400;
+        color: $gray;
+    }
+}

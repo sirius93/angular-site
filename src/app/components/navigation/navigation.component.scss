@@ -1,0 +1,25 @@
+.navbar-item.is-mega {
+    position: static;
+  
+    .is-mega-menu-title {
+      margin-bottom: 0;
+      padding: .375rem 1rem;
+    }
+  }
+.navbar-border{
+    border-bottom: 1px solid black;
+}
+.navbar{
+  background: transparent;  
+  @media only screen and (min-width: 767px) {
+    margin: 0 0 0 110px;
+  }
+}  
+h2{
+  a{
+    font-weight: 100;
+    color: #05386B;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,15 @@
+.footer{
+    padding : 0.5rem 0;
+    background: white;
+    border-top: solid 1px darkgray;
+    .footer-item{
+        display: inline;
+    }
+    a{
+        font-weight: 100;
+        color: #deeef5;
+        font-size: 22px;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+}

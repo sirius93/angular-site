@@ -1,0 +1,18 @@
+@import "../../../assets/sass/app-variables.scss";
+.title{
+    color: inherit;
+    h1{
+        font-size: 26px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+    }
+    h1::after{
+        content: ' ';
+        display: block;
+        width: 50px;
+        margin: 5px auto 0px 0;
+        border: 2px solid;
+    }
+}

@@ -1,0 +1,18 @@
+<div class="columns">
+  <div class="column is-6">
+    <ng-template ngFor let-d [ngForOf]="data" let-i="index">
+        <div class="progress-bar-container" *ngIf="i%2==0">
+            <h2>{{d.title}}</h2>
+            <progress class="progress is-primary" [value]="d.value" [max]="d.maxValue">30%</progress>    
+        </div>
+    </ng-template>
+  </div>
+  <div class="column is-6">
+    <ng-template ngFor let-d [ngForOf]="data" let-i="index">
+        <div class="progress-bar-container" *ngIf="i%2!==0">
+            <h2>{{d.title}}</h2>
+            <progress class="progress is-primary" [value]="d.value" [max]="d.maxValue">30%</progress>     
+        </div>
+    </ng-template>
+  </div>
+</div>
