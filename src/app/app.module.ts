@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AccordionModule } from 'angularx-accordion';
 import { ParticlesModule } from 'angular-particle';
 import { PagesModule  } from './pages/pages.module';
+import { firebaseConfig } from '../environments/firebase-config';
 
 @NgModule({
   declarations: [
