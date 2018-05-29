@@ -11,10 +11,12 @@ import { ProjectCardComponent } from './project-card/project-card.component';
 import { EducationContentComponent } from './education-content/education-content.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { PipesModule } from '../pipes/pipes.module';
 @NgModule({
   imports: [
     CommonModule,
-    AccordionModule
+    AccordionModule,
+    PipesModule
   ],
   exports: [
     NavigationComponent,

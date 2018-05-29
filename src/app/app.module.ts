@@ -9,7 +9,7 @@ import { firebaseConfig } from '../environments/firebase-config';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-// import { IteratorPipe } from './pipes/iterator.pipe';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     PagesModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

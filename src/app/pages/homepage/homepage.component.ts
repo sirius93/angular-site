@@ -217,7 +217,7 @@ public Alldata: any;
       },
       'retina_detect': true
     };
-      var d = this._service.getData();
+      const d = this._service.getData();
       d.snapshotChanges().subscribe(item => {
         this.Alldata = [];
         this.ProjectData = [];
@@ -230,26 +230,12 @@ public Alldata: any;
           this.Alldata.push(y);
         });
         this.HeroBannerData = this.Alldata[0];
-        // this.ProjectData.push(this.Alldata[1].toJSON);
+        this.ProjectData = this.Alldata[1];
         this.contactMe = this.Alldata[2];
-        // this.educationContent.push(this.Alldata[3].toJSON);
+        this.educationContent = this.Alldata[3];
         this.experienceData = this.Alldata[4];
-        for (let key in this.Alldata[5]) {
-          if (key) {
-            this.progressBar.push(this.Alldata[5][key]);
-          }
-        }
-        for (let key in this.Alldata[3]) {
-          if (key) {
-            this.educationContent.push(this.Alldata[3][key]);
-          }
-        }
-        for (let key in this.Alldata[1]) {
-          if (key) {
-            this.ProjectData.push(this.Alldata[1][key]);
-          }
-        }
-        console.log(this.ProjectData);
+        this.progressBar = this.Alldata[5];
+        // console.log(this.ProjectData, this.progressBar, this.educationContent);
       });
     }
 }

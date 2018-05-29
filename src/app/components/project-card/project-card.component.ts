@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { IteratorPipe } from '../../pipes/iterator.pipe';
 @Component({
   selector: 'app-project-card',
   templateUrl: './project-card.component.html',

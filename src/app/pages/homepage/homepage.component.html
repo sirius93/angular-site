@@ -39,7 +39,7 @@
           <app-title *ngIf="titleData" [data]="titleData"></app-title>
         </div>
         <div class="column is-8 bounce animated">
-          <app-progress-bars *ngIf="progressBar" [data]="progressBar"></app-progress-bars>
+          <app-progress-bars *ngIf="progressBar" [data]="progressBar | iterator"></app-progress-bars>
         </div>
     </div>
   </div>
@@ -52,7 +52,7 @@
             <app-title *ngIf="titleData" [data]="titleData"></app-title>
           </div>
           <div class="column is-8 bounce animated">
-              <app-education-content *ngIf="educationContent" [data]="educationContent"></app-education-content>
+              <app-education-content *ngIf="educationContent" [data]="educationContent | iterator"></app-education-content>
           </div>
       </div>
     </div>
@@ -65,7 +65,7 @@
           <app-title *ngIf="titleData" [data]="titleData"></app-title>
         </div>
         <div class="column is-8 bounce animated">
-          <app-project-card *ngIf="ProjectData" [data]="ProjectData"></app-project-card>
+          <app-project-card *ngIf="ProjectData" [data]="ProjectData | iterator"></app-project-card>
         </div>
     </div>
   </div>

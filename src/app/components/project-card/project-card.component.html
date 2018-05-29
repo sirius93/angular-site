@@ -14,7 +14,7 @@
                 <h2>{{d.anchor.anchorText}}</h2>
               </a>
               <div class="project-tag-container">
-                <div class="tag" *ngFor="let t of d.tags">
+                <div class="tag" *ngFor="let t of (d.tags | iterator)">
                   {{t}}
                 </div>
               </div>
@@ -35,7 +35,7 @@
                   <h2>{{d.anchor.anchorText}}</h2>
                 </a>
                 <div class="project-tag-container">
-                  <div class="tag" *ngFor="let t of d.tags">
+                  <div class="tag" *ngFor="let t of (d.tags | iterator)">
                     {{t}}
                   </div>
                 </div>

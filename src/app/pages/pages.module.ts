@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { PipesModule } from '../pipes/pipes.module';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { HomepageComponent } from './homepage/homepage.component';
 import {ComponentsModule} from '../components/components.module';
@@ -13,7 +13,8 @@ import { FirebaseService } from '../services/firebase.service';
     CommonModule,
     ComponentsModule,
     AccordionModule,
-    ParticlesModule
+    ParticlesModule,
+    PipesModule
   ],
   declarations: [HomepageComponent],
   exports: [HomepageComponent],
