@@ -7,9 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ContactMeComponent implements OnInit {
   @Input() data: any;
+  public social;
   constructor() { }
 
   ngOnInit() {
+    if (this.data) {
+      this.social = [];
+      for (let key in this.data.links) {
+        if (key) {
+          this.social.push(this.data.links[key]);
+        }
+      }
+    }
   }
 
 }

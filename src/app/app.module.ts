@@ -6,6 +6,10 @@ import { AccordionModule } from 'angularx-accordion';
 import { ParticlesModule } from 'angular-particle';
 import { PagesModule  } from './pages/pages.module';
 import { firebaseConfig } from '../environments/firebase-config';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { IteratorPipe } from './pipes/iterator.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,10 @@ import { firebaseConfig } from '../environments/firebase-config';
     ComponentsModule,
     AccordionModule,
     ParticlesModule,
-    PagesModule
+    PagesModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

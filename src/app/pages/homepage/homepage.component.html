@@ -1,16 +1,16 @@
 <div class="main-section bounce">
   <particles [width]="width" [height]="height" [params]="myParams"></particles>    
-  <app-hero-banner [data]="HeroBannerData" class="bounce animated"></app-hero-banner>
+  <app-hero-banner *ngIf="HeroBannerData" [data]="HeroBannerData" class="bounce animated"></app-hero-banner>
 </div>
 
 <div class="section white-bg">
   <div class="section-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
     <div class="columns">
         <div class="column is-2 is-offset-1">
-          <app-title [data]="titleData" class="bounce animated"></app-title>
+          <app-title *ngIf="titleData" [data]="titleData" class="bounce animated"></app-title>
         </div>
         <div class="column is-8">
-          <div class="content bounce animated" [innerHtml]="description">
+          <div *ngIf="titleData" class="content bounce animated" [innerHtml]="description">
           </div>
         </div>
     </div>
@@ -21,9 +21,9 @@
   <div class="section-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
     <div class="columns">
         <div class="column is-2 is-offset-1">
-          <app-title [data]="titleData"></app-title>
+          <app-title *ngIf="titleData" [data]="titleData"></app-title>
         </div>
-        <div class="column is-8 bounce animated">
+        <div class="column is-8 bounce animated" *ngIf="experienceData">
             <app-experience-card [data]="experienceData"></app-experience-card>
             <app-experience-card [data]="experienceData"></app-experience-card>
             <app-experience-card [data]="experienceData"></app-experience-card>
@@ -36,10 +36,10 @@
   <div class="section-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
     <div class="columns">
         <div class="column is-2 is-offset-1">
-          <app-title [data]="titleData"></app-title>
+          <app-title *ngIf="titleData" [data]="titleData"></app-title>
         </div>
         <div class="column is-8 bounce animated">
-          <app-progress-bars [data]="progressBar"></app-progress-bars>
+          <app-progress-bars *ngIf="progressBar" [data]="progressBar"></app-progress-bars>
         </div>
     </div>
   </div>
@@ -49,10 +49,10 @@
     <div class="section-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
       <div class="columns">
           <div class="column is-2 is-offset-1">
-            <app-title [data]="titleData"></app-title>
+            <app-title *ngIf="titleData" [data]="titleData"></app-title>
           </div>
           <div class="column is-8 bounce animated">
-              <app-education-content [data]="educationContent"></app-education-content>
+              <app-education-content *ngIf="educationContent" [data]="educationContent"></app-education-content>
           </div>
       </div>
     </div>
@@ -62,10 +62,10 @@
   <div class="section-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
     <div class="columns">
         <div class="column is-2 is-offset-1">
-          <app-title [data]="titleData"></app-title>
+          <app-title *ngIf="titleData" [data]="titleData"></app-title>
         </div>
         <div class="column is-8 bounce animated">
-          <app-project-card [data]="ProjectData"></app-project-card>
+          <app-project-card *ngIf="ProjectData" [data]="ProjectData"></app-project-card>
         </div>
     </div>
   </div>
@@ -75,10 +75,10 @@
     <div class="section-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
       <div class="columns">
           <div class="column is-2 is-offset-1">
-            <app-title [data]="titleData"></app-title>
+            <app-title *ngIf="titleData" [data]="titleData"></app-title>
           </div>
           <div class="column is-8 bounce animated">
-            <app-contact-me [data]="contactMe"></app-contact-me>
+            <app-contact-me *ngIf="contactMe" [data]="contactMe"></app-contact-me>
           </div>
       </div>
     </div>

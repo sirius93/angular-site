@@ -1,16 +1,16 @@
 <div class="project-card">
   <div class="columns">
     <div class="column is-6">
-      <ng-template ngFor let-d [ngForOf]="data" let-i="index"> 
+      <ng-template ngFor let-d [ngForOf]="data" let-i="index">
           <div class="card" *ngIf="i%2==0">
               <div class="card-image">
-                <a [href]="d.anchor.anchorLink">
+                <a [href]="d.anchor.anchorLink || 'undefined'">
                   <figure class="image is-4by3 project-image">
                         <img [src]="d.anchor.imgSrc" alt="Placeholder image">
                   </figure>
                 </a>
               </div>
-              <a class="project-link" target="_blank" href="http://styletribute.com">
+              <a class="project-link" target="_blank" [href]="d.anchor.anchorLink">
                 <h2>{{d.anchor.anchorText}}</h2>
               </a>
               <div class="project-tag-container">
@@ -31,7 +31,7 @@
                     </figure>
                   </a>
                 </div>
-                <a class="project-link" target="_blank" href="http://styletribute.com">
+                <a class="project-link" target="_blank" [href]="d.anchor.anchorLink">
                   <h2>{{d.anchor.anchorText}}</h2>
                 </a>
                 <div class="project-tag-container">

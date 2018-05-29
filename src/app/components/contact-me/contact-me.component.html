@@ -1,7 +1,7 @@
 <div class="contact-me-section">
     <div class="small">{{data.header}}</div>
     <h2 class="contact-mail">{{data.mail}}</h2>
-    <ng-template ngFor let-link [ngForOf]="data.links">
+    <ng-template ngFor let-link [ngForOf]="social">
       <a class="social-link" [target]="link.target" [href]="link.href"><i class="{{link.class}}"></i></a>  
     </ng-template>
 </div>

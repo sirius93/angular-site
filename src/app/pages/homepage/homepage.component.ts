@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../../services/firebase.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-homepage',
@@ -26,110 +28,83 @@ export class HomepageComponent implements OnInit {
       I am able to transform static artwork into pixel prefect, interactive and fully functional interfaces.
   </p>
 </div>`;
-public experienceData = {
-  title : 'Company Name',
-  href : 'www.company.com',
-  timeStamp : 'sep-11 to ocotober 17',
-  role : 'Front End Dev'
-};
-public progressBar = [
-  {
-    title : 'HTML',
-    maxValue : 100,
-    value : 70,
-    dataValue : 30
-  },
-  {
-    title : 'CSS',
-    maxValue : 100,
-    value : 55,
-    dataValue : 30
-  },
-  {
-    title : 'JAVASCRIPT',
-    maxValue : 100,
-    value : 80,
-    dataValue : 30
-  },
-  {
-    title : 'ANGULAR',
-    maxValue : 100,
-    value : 65,
-    dataValue : 30
-  }
-];
-public HeroBannerData = {
-  heading : 'Front End Developer',
-  SubHeading : '<em>Hey I am a Nandan</em>',
-  description : 'Specializing in building everything from small business sites to rich interactive web apps.'
-};
-public ProjectData = [
-  {
-    anchor : {
-      anchorText : 'w3c.com',
-      anchorLink : '#',
-      imgSrc : 'https://bulma.io/images/placeholders/1280x960.png',
-    },
-    tags : ['HTML', 'CSS', 'JS']
+public HeroBannerData;
+       ProjectData: any;
+       contactMe: any;
+       educationContent: any;
+       experienceData: any;
+       progressBar: any;
 
-  },
-  {
-    anchor : {
-      anchorText : 'w3c.com',
-      anchorLink : '#',
-      imgSrc : 'https://bulma.io/images/placeholders/1280x960.png',
-    },
-    tags : ['HTML', 'CSS', 'JS']
-
-  },
-  {
-    anchor : {
-      anchorText : 'w3c.com',
-      anchorLink : '#',
-      imgSrc : 'https://bulma.io/images/placeholders/1280x960.png',
-    },
-    tags : ['HTML', 'CSS', 'JS']
-
-  },
-  {
-    anchor : {
-      anchorText : 'w3c.com',
-      anchorLink : '#',
-      imgSrc : 'https://bulma.io/images/placeholders/1280x960.png',
-    },
-    tags : ['HTML', 'CSS', 'JS']
-
-  }
-];
-public educationContent = [
-  {
-    timeline : '2018(expected)',
-    course : 'BE computer Science',
-    school : 'VTU'
-  },
-  {
-    timeline : '2018(expected)',
-    course : 'BE computer Science',
-    school : 'VTU'
-  }
-];
-public contactMe = {
-  header : 'Feel free to contact',
-  mail : 'nandan.1345@gmail.com',
-  links : [
-    {
-      target : '_blank',
-      href : 'facebook.com/nandank93',
-      class : 'fa fa-facebook'
-    },
-    {
-      target : '_blank',
-      href : 'facebook.com/nandank93',
-      class : 'fa fa-twitter'
-    }
-  ]
-};
-  constructor() { }
+// public experienceData = {
+//   title : 'Company Name',
+//   href : 'www.company.com',
+//   timeStamp : 'sep-11 to ocotober 17',
+//   role : 'Front End Dev'
+// };
+// public progressBar = [
+//   {
+//     title : 'HTML',
+//     maxValue : 100,
+//     value : 70,
+//     dataValue : 30
+//   },
+//   {
+//     title : 'CSS',
+//     maxValue : 100,
+//     value : 55,
+//     dataValue : 30
+//   },
+//   {
+//     title : 'JAVASCRIPT',
+//     maxValue : 100,
+//     value : 80,
+//     dataValue : 30
+//   },
+//   {
+//     title : 'ANGULAR',
+//     maxValue : 100,
+//     value : 65,
+//     dataValue : 30
+//   }
+// ];
+// public HeroBannerData;
+// public HeroBannerData = {
+//   heading : 'Front End Developer',
+//   SubHeading : '<em>Hey I am a Nandan</em>',
+//   description : 'Specializing in building everything from small business sites to rich interactive web apps.'
+// };
+// public ProjectData = [];
+// public educationContent = [
+//   {
+//     timeline : '2018(expected)',
+//     course : 'BE computer Science',
+//     school : 'VTU'
+//   },
+//   {
+//     timeline : '2018(expected)',
+//     course : 'BE computer Science',
+//     school : 'VTU'
+//   }
+// ];
+// public contactMe = {
+//   header : 'Feel free to contact',
+//   mail : 'nandan.1345@gmail.com',
+//   links : [
+//     {
+//       target : '_blank',
+//       href : 'facebook.com/nandank93',
+//       class : 'fa fa-facebook'
+//     },
+//     {
+//       target : '_blank',
+//       href : 'facebook.com/nandank93',
+//       class : 'fa fa-twitter'
+//     }
+//   ]
+// };
+public Alldata: any;
+  constructor(public _service: FirebaseService) {
+   }
 
   ngOnInit() {
     this.myParams = {
@@ -242,5 +217,39 @@ public contactMe = {
       },
       'retina_detect': true
     };
+      var d = this._service.getData();
+      d.snapshotChanges().subscribe(item => {
+        this.Alldata = [];
+        this.ProjectData = [];
+        this.educationContent = [];
+        this.progressBar = [];
+        this.experienceData = '';
+        this.contactMe = '';
+        item.forEach(element => {
+          let y = element.payload.toJSON();
+          this.Alldata.push(y);
+        });
+        this.HeroBannerData = this.Alldata[0];
+        // this.ProjectData.push(this.Alldata[1].toJSON);
+        this.contactMe = this.Alldata[2];
+        // this.educationContent.push(this.Alldata[3].toJSON);
+        this.experienceData = this.Alldata[4];
+        for (let key in this.Alldata[5]) {
+          if (key) {
+            this.progressBar.push(this.Alldata[5][key]);
+          }
+        }
+        for (let key in this.Alldata[3]) {
+          if (key) {
+            this.educationContent.push(this.Alldata[3][key]);
+          }
+        }
+        for (let key in this.Alldata[1]) {
+          if (key) {
+            this.ProjectData.push(this.Alldata[1][key]);
+          }
+        }
+        console.log(this.ProjectData);
+      });
     }
 }

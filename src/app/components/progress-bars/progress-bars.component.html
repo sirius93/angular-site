@@ -3,7 +3,7 @@
     <ng-template ngFor let-d [ngForOf]="data" let-i="index">
         <div class="progress-bar-container" *ngIf="i%2==0">
             <h2>{{d.title}}</h2>
-            <progress class="progress is-primary" [value]="d.value" [max]="d.maxValue">30%</progress>    
+            <progress class="progress is-primary" [value]="d.value" [max]="d.maxValue">{{d.dataValue}}</progress>    
         </div>
     </ng-template>
   </div>
@@ -11,7 +11,7 @@
     <ng-template ngFor let-d [ngForOf]="data" let-i="index">
         <div class="progress-bar-container" *ngIf="i%2!==0">
             <h2>{{d.title}}</h2>
-            <progress class="progress is-primary" [value]="d.value" [max]="d.maxValue">30%</progress>     
+            <progress class="progress is-primary" [value]="d.value" [max]="d.maxValue">{{d.dataValue}}</progress>     
         </div>
     </ng-template>
   </div>
