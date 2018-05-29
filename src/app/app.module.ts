@@ -29,4 +29,5 @@ import { PipesModule } from './pipes/pipes.module';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
