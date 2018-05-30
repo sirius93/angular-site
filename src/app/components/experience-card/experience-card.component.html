@@ -1,5 +1,7 @@
-<div class="box">
-    <h2 class="header">{{data.title}}   <a [href]="data.href"><i class="fa fa-external-link"></i></a></h2>
-    <div class="small">{{data.timeStamp}}</div>
-    <p class="role">{{data.role}}</p>
-</div>
+<ng-template ngFor let-d [ngForOf]="data" let-i="index">
+    <div class="box">
+        <h2 class="header">{{d.title}}   <a [href]="d.href"><i class="fa fa-external-link"></i></a></h2>
+        <div class="small">{{d.timeStamp}}</div>
+        <p class="role">{{d.role}}</p>
+    </div>
+</ng-template>

@@ -24,9 +24,9 @@
           <app-title *ngIf="titleData" [data]="titleData"></app-title>
         </div>
         <div class="column is-8 bounce animated" *ngIf="experienceData">
-            <app-experience-card [data]="experienceData"></app-experience-card>
-            <app-experience-card [data]="experienceData"></app-experience-card>
-            <app-experience-card [data]="experienceData"></app-experience-card>
+            <app-experience-card [data]="experienceData | iterator"></app-experience-card>
+            <!-- <app-experience-card [data]="experienceData"></app-experience-card>
+            <app-experience-card [data]="experienceData"></app-experience-card> -->
         </div>
     </div>
   </div>

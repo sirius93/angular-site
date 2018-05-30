@@ -17,23 +17,14 @@ export class HomepageComponent implements OnInit {
     subtitle: '',
     img: './assets/images/avatar-icon.png'
   };
-  public description = `<div>
-  <h2>Jess Tan</h2>
-  <p>
-      Offering creative design solutions to solve business problems is what I do best.<br>
-      I write in JavaScript, CSS, Java, and PHP. I also speak to databases and make servers do stuff.
-      I like working on scalability, performance, reusability, and great user experiences.
-  <br><br>
-      As a designer and a developer, I write code that conforms to industry standards and semantic best practices.
-      I am able to transform static artwork into pixel prefect, interactive and fully functional interfaces.
-  </p>
-</div>`;
-public HeroBannerData;
+
+  public HeroBannerData;
        ProjectData: any;
        contactMe: any;
        educationContent: any;
        experienceData: any;
        progressBar: any;
+       description: any;
 
 // public experienceData = {
 //   title : 'Company Name',
@@ -225,6 +216,7 @@ public Alldata: any;
         this.progressBar = [];
         this.experienceData = '';
         this.contactMe = '';
+        this.description = ``;
         item.forEach(element => {
           let y = element.payload.toJSON();
           this.Alldata.push(y);
@@ -232,10 +224,12 @@ public Alldata: any;
         this.HeroBannerData = this.Alldata[0];
         this.ProjectData = this.Alldata[1];
         this.contactMe = this.Alldata[2];
-        this.educationContent = this.Alldata[3];
-        this.experienceData = this.Alldata[4];
-        this.progressBar = this.Alldata[5];
+        this.description = this.Alldata[3];
+        this.educationContent = this.Alldata[4];
+        this.experienceData = this.Alldata[5];
+        this.progressBar = this.Alldata[6];
         // console.log(this.ProjectData, this.progressBar, this.educationContent);
+        console.log(this.Alldata);
       });
     }
 }
